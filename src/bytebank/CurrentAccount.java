@@ -1,6 +1,6 @@
 package bytebank;
 
-public class CurrentAccount extends Account {
+public class CurrentAccount extends Account implements Taxable {
 
     public CurrentAccount(int agency, int number, Client titular) {
         super(agency, number, titular);
@@ -9,6 +9,11 @@ public class CurrentAccount extends Account {
     @Override
     public boolean withDraw(double value) {
         return super.withDraw(value + 0.20);
+    }
+
+    @Override
+    public double getTaxValue() {
+        return super.getBalance() * 0.22;
     }
 
 }

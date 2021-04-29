@@ -2,11 +2,11 @@ package company;
 
 public class Administrator extends Employee implements InternSystemAccess {
 
-    private String password;
+    private Authenticator authenticator = new Authenticator();
 
     public Administrator(String document, String name, double salary, String password) {
         super(document, name, salary);
-        this.password = password;
+        authenticator.setPassword(password);
     }
 
     @Override
@@ -17,7 +17,7 @@ public class Administrator extends Employee implements InternSystemAccess {
     @Override
     public boolean authentication(String password) {
         System.out.println("Administrador: " + super.getName() + " - Autenticando...");
-        return this.password == password;
+        return this.authenticator.authentication(password);
     }
 
 }
