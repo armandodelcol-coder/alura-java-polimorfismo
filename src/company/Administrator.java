@@ -1,22 +1,22 @@
 package company;
 
-public class Manager extends Employee implements InternSystemAccess {
+public class Administrator extends Employee implements InternSystemAccess {
 
     private String password;
 
-    public Manager(String document, String name, double salary, String password) {
+    public Administrator(String document, String name, double salary, String password) {
         super(document, name, salary);
         this.password = password;
     }
 
     @Override
     public double getBonus() {
-        return super.getSalary() + super.getSalary() * 0.05;
+        return 800;
     }
 
     @Override
     public boolean authentication(String password) {
-        System.out.println("Gerente: " + super.getName() + " - Autenticando...");
+        System.out.println("Administrador: " + super.getName() + " - Autenticando...");
         return this.password == password;
     }
 
