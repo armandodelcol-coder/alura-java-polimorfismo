@@ -1,4 +1,4 @@
-package modulo04.bytebank;
+package bytebank;
 
 public class TrainingBytebank {
 

@@ -1,4 +1,4 @@
-package modulo01020305;
+package company;
 
 public class VideoEditor extends Employee {
 
